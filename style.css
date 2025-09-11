@@ -1,0 +1,60 @@
+/* Update body background */
+body {
+    line-height: 1.6;
+    color: #333;
+    background: #3498db; /* Blue background */
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body.dark-mode {
+    background: #1a5276; /* Darker blue for dark mode */
+    color: #f4f4f4;
+}
+
+/* Update section backgrounds for consistency */
+#home {
+    background: linear-gradient(135deg, #3498db, #2980b9); /* Gradient blue for home */
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+#about, #skills, #projects, #contact {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white for contrast */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Flying Hearts Animation */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255, 102, 102, 0.7)"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center;
+    background-size: contain;
+    animation: float 10s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Ensure hearts don't interfere with content */
+section, nav, footer {
+    position: relative;
+    z-index: 10;
+}
